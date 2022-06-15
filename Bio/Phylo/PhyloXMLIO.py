@@ -19,6 +19,7 @@ About capitalization:
 
 """
 
+import locale
 from xml.etree import ElementTree
 
 from Bio.Phylo import PhyloXML as PX
@@ -46,7 +47,7 @@ for prefix, uri in NAMESPACES.items():
     register_namespace(prefix, uri)
 
 # Tell ElementTree how to write to text handles
-DEFAULT_ENCODING = "unicode"
+DEFAULT_ENCODING = locale.getlocale()[1] or "unicode"
 
 
 class PhyloXMLError(Exception):
