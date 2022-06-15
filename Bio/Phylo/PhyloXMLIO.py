@@ -47,7 +47,7 @@ for prefix, uri in NAMESPACES.items():
     register_namespace(prefix, uri)
 
 # Tell ElementTree how to write to text handles
-DEFAULT_ENCODING = locale.getlocale()[1] or "unicode"
+DEFAULT_ENCODING = str(locale.getlocale()[1]) or "unicode"
 
 
 class PhyloXMLError(Exception):
