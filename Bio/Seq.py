@@ -3276,14 +3276,8 @@ def complement_rna(sequence, inplace=False):
     return sequence.decode("ASCII")
 
 
-def _test():
-    """Run the Bio.Seq module's doctests (PRIVATE)."""
-    print("Running doctests...")
-    import doctest
-
-    doctest.testmod(optionflags=doctest.IGNORE_EXCEPTION_DETAIL)
-    print("Done")
-
-
 if __name__ == "__main__":
-    _test()
+    from doctest import IGNORE_EXCEPTION_DETAIL
+    from Bio._utils import run_doctest
+
+    run_doctest(optionflags=IGNORE_EXCEPTION_DETAIL)

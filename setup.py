@@ -39,7 +39,7 @@ except ImportError:
     )
 
 
-setuptools_version_tuple = tuple(int(x) for x in setuptools_version.split("."))
+setuptools_version_tuple = tuple(int(x) for x in setuptools_version.split(".")[:2])
 if setuptools_version_tuple < (70, 1) and "bdist_wheel" in sys.argv:
     # Check for presence of wheel in setuptools < 70.1
     # Before setuptools 70.1, wheel is needed to make a bdist_wheel.
@@ -255,11 +255,11 @@ setup(
         "Operating System :: OS Independent",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
         "Topic :: Scientific/Engineering",
         "Topic :: Scientific/Engineering :: Bio-Informatics",
         "Topic :: Software Development :: Libraries :: Python Modules",
